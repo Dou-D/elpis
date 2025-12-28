@@ -9,10 +9,10 @@ module.exports = (app) => {
     // 读取app/middleware/**/**.js
     const middlewarePath = path.resolve(app.businessPath, `.${sep}middleware`)
     // `.${sep}**${sep}**.js` **/**.js
-    const filterList = glob.sync(path.resolve(middlewarePath, `.${sep}**${sep}**.js`))
+    const fileList = glob.sync(path.resolve(middlewarePath, `.${sep}**${sep}**.js`))
     let a;
     const middlewares = {};
-    filterList.forEach(file => {
+    fileList.forEach(file => {
         // 提取名称
         let name = path.resolve(file);
         // 截取路径

@@ -22,19 +22,19 @@ module.exports = {
         app.businessPath = path.resolve(app.baseDir, `.${sep}app`);
 
         configLoader(app);
-        console.log("config loader done")
+        console.log("config", app.config)
         controllerLoader(app);
-        console.log("controller loader done")
+        console.log("controller", app.controller)
         extendLoader(app);
-        console.log("extend loader done")
+        console.log("extend", app.extend)
         middlewareLoader(app);
-        console.log("middleware loader done")
+        console.log("middleware", app.middleware)
         routerSchemaLoader(app);
-        console.log("router schema loader done")
+        console.log("router schema", app.routerSchema)
         serviceLoader(app);
-        console.log("service loader done")
+        console.log("service", app.service)
         routerLoader(app);
-        console.log("router loader done")
+        console.log("router", app.router)
 
         try {
             const port = process.env.PORT || 8080;
